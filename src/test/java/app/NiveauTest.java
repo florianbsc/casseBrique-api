@@ -1,17 +1,18 @@
-package org.example.cassBrique_api;
+package app;
 
+import app.Http.Models.Carre;
+import app.Http.Models.Cercle;
+import app.Http.Models.Niveau;
+import app.Http.Models.Triangle;
 import org.aspectj.lang.annotation.Before;
-import org.example.cassBrique_api.Cercle;
-import org.example.cassBrique_api.Carre;
-import org.example.cassBrique_api.Triangle;
-import org.example.cassBrique_api.Niveau;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
 public class NiveauTest {
     private Niveau niveau;
 
-    @Before("")
+    @BeforeEach
     public void setUp() {
         niveau = new Niveau();
         Triangle tri = new Triangle(3);

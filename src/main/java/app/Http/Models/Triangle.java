@@ -1,10 +1,15 @@
-package org.example.cassBrique_api;
+package app.Http.Models;
 
+
+import jakarta.persistence.Entity;
 
 import java.awt.*;
 
+@Entity
 public class Triangle extends FormeGeo {
     private double side =3;
+
+    protected Triangle(){}
 
     public  Triangle  (double side) {
         super("Triangle", Color.MAGENTA, 4, 4);

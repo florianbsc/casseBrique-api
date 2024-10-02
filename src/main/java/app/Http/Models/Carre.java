@@ -1,4 +1,4 @@
-package org.example.cassBrique_api;
+package app.Http.Models;
 
 
 import java.awt.*;
@@ -19,6 +19,8 @@ class Side {
 public class Carre extends FormeGeo {
     //  attribut du carré
     private Side side; // Un carré est composé d'un seul côté (longueur du côté identique pour tous)
+
+    protected Carre() {}
 
     // Constructeur pour initialiser le carré avec un côté
     public Carre(double side) {

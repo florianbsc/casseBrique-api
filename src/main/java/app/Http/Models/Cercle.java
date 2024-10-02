@@ -1,9 +1,11 @@
-package org.example.cassBrique_api;
+package app.Http.Models;
 
 import java.awt.*;
 
 public class Cercle extends FormeGeo {
     private double rayon = 2.5;
+
+    protected Cercle () {}
 
     public Cercle(double rayon) {
         super("Cercle", Color.GREEN, 0, 0);

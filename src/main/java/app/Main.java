@@ -1,4 +1,9 @@
-package org.example.cassBrique_api;
+package app;
+
+import app.Http.Models.Carre;
+import app.Http.Models.FormeGeo;
+import app.Http.Models.Niveau;
+import app.Http.Models.Triangle;
 
 public class Main {
     public static void main(String[] args) {

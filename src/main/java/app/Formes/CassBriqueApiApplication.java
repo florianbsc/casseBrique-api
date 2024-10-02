@@ -1,4 +1,4 @@
-package org.example.cassBrique_api;
+package app.Formes;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

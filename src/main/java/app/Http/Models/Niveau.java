@@ -1,4 +1,4 @@
-package org.example.cassBrique_api;
+package app.Http.Models;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,14 +19,16 @@ public class Niveau {
     }
 
     //    recupere les formes du niveau
-    public List<FormeGeo> getForme() {
-        return formes;
-    }
 
     //    Creat une forme au niveau
     public void addForme(FormeGeo forme) {
         formes.add(forme);
     }
+
+    public List<FormeGeo> getForme() {
+        return formes;
+    }
+
     //
 //    // Mettre à jour une forme
 //    public void editForme(int index, FormeGeo nouvelleForme) {
@@ -36,6 +38,8 @@ public class Niveau {
 //    }
 //
     //    Delete
+
+//    COMMENT REMOVE UNE FORME AVEC L'INDEX, COMPRENDRE L'INDEX
     public void deleteForme(FormeGeo forme) {
         formes.remove(forme);
     }
