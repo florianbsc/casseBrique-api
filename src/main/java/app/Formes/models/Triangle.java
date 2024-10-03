@@ -1,4 +1,4 @@
-package app.Http.Models;
+package app.Formes.models;
 
 
 import jakarta.persistence.Entity;
@@ -9,11 +9,17 @@ import java.awt.*;
 public class Triangle extends FormeGeo {
     private double side =3;
 
-    protected Triangle(){}
+//    il faut etre en pro
+    public Triangle(){}
+
 
     public  Triangle  (double side) {
         super("Triangle", Color.MAGENTA, 4, 4);
         this.side =side;
+    }
+
+    public double getSide() {
+        return side;
     }
 
     @Override

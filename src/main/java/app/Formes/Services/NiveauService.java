@@ -1,7 +1,7 @@
-package app.Http.Services;
+package app.Formes.Services;
 
 
-import app.Http.Models.FormeGeo;
+import app.Formes.models.FormeGeo;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

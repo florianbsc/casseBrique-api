@@ -1,6 +1,6 @@
-package app.Http.Controllers;
-import app.Http.Models.FormeGeo;
-import app.Http.Services.NiveauService;
+package app.Formes.Controllers;
+import app.Formes.models.FormeGeo;
+import app.Formes.Services.NiveauService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +13,7 @@ public class NiveauController {
 
     // Injection de la dépendance du service NiveauService grâce à @Autowired
     @Autowired
-    private NiveauService niveauService;
+    public NiveauService niveauService;
 
     /**
      * Ajoute une nouvelle forme au niveau.

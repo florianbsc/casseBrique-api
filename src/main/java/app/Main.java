@@ -1,9 +1,9 @@
 package app;
 
-import app.Http.Models.Carre;
-import app.Http.Models.FormeGeo;
-import app.Http.Models.Niveau;
-import app.Http.Models.Triangle;
+import app.Formes.models.Carre;
+import app.Formes.models.FormeGeo;
+import app.Formes.models.Niveau;
+import app.Formes.models.Triangle;
 
 public class Main {
     public static void main(String[] args) {

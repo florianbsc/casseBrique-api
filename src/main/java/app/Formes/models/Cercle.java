@@ -1,7 +1,11 @@
-package app.Http.Models;
+package app.Formes.models;
+
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import jakarta.persistence.Entity;
 
 import java.awt.*;
 
+@Entity
 public class Cercle extends FormeGeo {
     private double rayon = 2.5;
 
@@ -10,6 +14,11 @@ public class Cercle extends FormeGeo {
     public Cercle(double rayon) {
         super("Cercle", Color.GREEN, 0, 0);
         this.rayon = rayon;
+    }
+
+    @Override
+    public String getName() {
+        return "Cercle";
     }
 
     @Override

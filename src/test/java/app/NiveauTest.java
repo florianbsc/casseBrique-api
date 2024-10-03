@@ -1,10 +1,9 @@
 package app;
 
-import app.Http.Models.Carre;
-import app.Http.Models.Cercle;
-import app.Http.Models.Niveau;
-import app.Http.Models.Triangle;
-import org.aspectj.lang.annotation.Before;
+import app.Formes.models.Carre;
+import app.Formes.models.Cercle;
+import app.Formes.models.Niveau;
+import app.Formes.models.Triangle;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

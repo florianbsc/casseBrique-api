@@ -1,4 +1,4 @@
-package app.Http.Models;
+package app.Formes.models;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package app.Http.Models;
+package app.Formes.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,8 +8,8 @@ import java.awt.Color;
 
 @Entity
 public abstract class FormeGeo {
-    @Id @GeneratedValue
-    protected int id;
+    @Id@GeneratedValue
+    protected Long id;
     protected Color couleur;
     protected String name; // attribut commun a toutes les formes
     protected int x;
@@ -26,7 +26,7 @@ public abstract class FormeGeo {
         this.y = y;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
