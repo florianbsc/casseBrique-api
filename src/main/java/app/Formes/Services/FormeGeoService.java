@@ -1,29 +1,28 @@
 package app.Formes.Services;
 
+import app.Formes.Repository.FormeGeoRepository;
+import app.Formes.Repository.NiveauRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.awt.*;
 
 @Service
-public abstract class FormeGeoService {
-    protected Color couleur;
-    protected String name; // attribut commun a toutes les formes
-    protected int x;
-    protected int y;
+public class FormeGeoService {
 
-    public void FormeGeo(String name, Color couleur, int x, int y) {
-        this.name = name;
-        this.couleur = couleur;
-        this.x = x;
-        this.y = y;
-    }
+    @Autowired
+    private NiveauRepository niveauRepository;
+    @Autowired
+    private FormeGeoRepository formeGeoRepository;
 
-//    private FormeGeo triangle1 = new Triangle(4.5); // Triangle avec un côté de 4.5 unités
+//    public FormeGeo creatForme(FormeGeo forme){
+//        niveau.addForme(forme);
+//    }
 
-    public abstract double calculePerimetre() ;
-    public abstract double calculeAire() ;
+    public void saveFormeGeo(FormeGeo forme);
 
     public Color getCouleur() {
+        Color couleur = Color.RED;
         return couleur;
     }
 }

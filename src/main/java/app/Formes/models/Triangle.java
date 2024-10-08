@@ -2,24 +2,39 @@ package app.Formes.models;
 
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
 import java.awt.*;
 
 @Entity
+@Table(name = "triangles")
 public class Triangle extends FormeGeo {
     private double side =3;
 
-//    il faut etre en pro
     public Triangle(){}
 
-
-    public  Triangle  (double side) {
-        super("Triangle", Color.MAGENTA, 4, 4);
+    public  Triangle  (double side, int x, int y) {
+        super("Triangle", Color.MAGENTA, x, y);
         this.side =side;
     }
 
     public double getSide() {
         return side;
+    }
+
+    @Override
+    public String getName() {
+        return "Triangle";
+    }
+
+    @Override
+    public int getX() {
+        return super.getX();
+    }
+
+    @Override
+    public int getY() {
+        return super.getY();
     }
 
     @Override

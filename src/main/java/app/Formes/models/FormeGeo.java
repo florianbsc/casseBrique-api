@@ -1,14 +1,14 @@
 package app.Formes.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.awt.Color;
 
 @Entity
+@Table(name = "FormeGeo")
 public abstract class FormeGeo {
-    @Id@GeneratedValue
+
+    @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long id;
     protected Color couleur;
     protected String name; // attribut commun a toutes les formes
@@ -29,25 +29,41 @@ public abstract class FormeGeo {
     public Long getId() {
         return id;
     }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
+    }
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Color getCouleur() {
         return couleur;
     }
+    public void setCouleur(Color couleur) {
+        this.couleur = couleur;
+    }
 
     public int getX() {
         return x;
+    }
+    public void setX(int x) {
+        this.x = x;
     }
 
     public int getY() {
         return y;
     }
+    public void setY(int y) {
+        this.y = y;
+    }
 
     public abstract double calculePerimetre() ;
     public abstract double calculeAire() ;
+
 
     public abstract void displayForme() ;
 

@@ -14,9 +14,9 @@ public class NiveauTest {
     @BeforeEach
     public void setUp() {
         niveau = new Niveau();
-        Triangle tri = new Triangle(3);
-        Carre car = new Carre(3);
-        Cercle cer = new Cercle(3);
+        Triangle tri = new Triangle(3, 4, 4);
+        Carre car = new Carre(3, 8, 8);
+        Cercle cer = new Cercle(3, 0, 0);
 
         niveau.addForme(car);
         niveau.addForme(cer);
@@ -25,10 +25,10 @@ public class NiveauTest {
 
     @Test
     public void When_addForme_RETURN_formeAdded() {
-        Carre carTest = new Carre(66);
+        Carre carTest = new Carre(66, 8, 8);
         Niveau niveau1 = niveau;
         niveau1.addForme(carTest);
-        niveau1.dispayNiveau();
+        niveau1.displayNiveau();
     }
 
     @Test
@@ -39,13 +39,13 @@ public class NiveauTest {
 
     @Test
     public void When_getForme_RETURN_Listforme() {
-        Carre carTest = new Carre(66);
-        Triangle triTest = new Triangle(66);
+        Carre carTest = new Carre(66, 8, 8);
+        Triangle triTest = new Triangle(66, 4, 4);
 
         niveau.addForme(carTest);
         niveau.addForme(triTest);
 
-        niveau.dispayNiveau();
+        niveau.displayNiveau();
     }
 
     @Test

@@ -1,6 +1,9 @@
 package app.Formes.models;
 
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
 import java.awt.*;
 
 //polymorphisme
@@ -16,6 +19,8 @@ class Side {
     }
 }
 
+@Entity
+@Table( name = "Carrés")
 public class Carre extends FormeGeo {
     //  attribut du carré
     private Side side; // Un carré est composé d'un seul côté (longueur du côté identique pour tous)
@@ -23,11 +28,23 @@ public class Carre extends FormeGeo {
     protected Carre() {}
 
     // Constructeur pour initialiser le carré avec un côté
-    public Carre(double side) {
-        super("Carre", Color.CYAN, 8, 8);  // Appel au constructeur parent pour initialiser le nom et la couleur
+    public Carre(double side, int x, int y) {
+        super("Carre", Color.CYAN, x, y);  // Appel au constructeur parent pour initialiser le nom et la couleur
         this.side = new Side(side); // Composition : Un carré contient un côté
     }
 
+    @Override
+    public String getName() {
+        return "Carré";
+    }
+    @Override
+    public int getX() {
+        return super.getX();
+    }
+    @Override
+    public int getY() {
+        return super.getY();
+    }
     //    methode
     @Override
     public double calculePerimetre() {
