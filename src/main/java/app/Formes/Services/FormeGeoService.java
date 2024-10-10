@@ -1,28 +1,26 @@
 package app.Formes.Services;
 
 import app.Formes.Repository.FormeGeoRepository;
-import app.Formes.Repository.NiveauRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import app.Formes.models.FormeGeo;
 import org.springframework.stereotype.Service;
 
-import java.awt.*;
+import java.util.List;
 
 @Service
 public class FormeGeoService {
 
-    @Autowired
-    private NiveauRepository niveauRepository;
-    @Autowired
-    private FormeGeoRepository formeGeoRepository;
+    private final FormeGeoRepository formeGeoRepository;
 
-//    public FormeGeo creatForme(FormeGeo forme){
-//        niveau.addForme(forme);
-//    }
-
-    public void saveFormeGeo(FormeGeo forme);
-
-    public Color getCouleur() {
-        Color couleur = Color.RED;
-        return couleur;
+    public FormeGeoService(FormeGeoRepository formeGeoRepository) {
+        this.formeGeoRepository = formeGeoRepository;
     }
+
+    public FormeGeo saveFormeGeo(FormeGeo forme) {
+        return formeGeoRepository.save(forme);
+    }
+
+    public List<FormeGeo> getAllFormes() {
+        return formeGeoRepository.findAll();
+    }
+
 }

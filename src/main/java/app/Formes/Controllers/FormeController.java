@@ -3,39 +3,33 @@ package app.Formes.Controllers;
 import app.Formes.Services.FormeGeoService;
 import app.Formes.models.FormeGeo;
 import app.Formes.models.Triangle;
+import jakarta.persistence.GeneratedValue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.awt.*;
 
-//import java.awt.*;
+import java.util.List;
 
 @RestController
 @RequestMapping("api/formes")
 public class FormeController {
 
-    @Autowired
-    private FormeGeoService formeGeoService;
+    private final FormeGeoService formeGeoService;
 
-    @GetMapping
-    public Color getCouleur() {
-        return formeGeoService.getCouleur();
+    public FormeController(FormeGeoService formeGeoService) {
+        this.formeGeoService = formeGeoService;
     }
 
+    @GetMapping
+    public List<FormeGeo> getAllFormes() {
+        return formeGeoService.getAllFormes();
+    }
+
+
     @PostMapping
-    public formeGeo createForme(@RequestBody fromeGeo forme) {
+    public FormeGeo createForme(@RequestBody FormeGeo forme) {
         return formeGeoService.saveFormeGeo(forme);
     }
 }
-
-//public class FormeController {
-//    @GetMapping("/forme")
-//    public FormeGeo getForme() {
-//        return new Triangle(69, 4, 4);
-//
-//    }
-//}
-
-
 
 

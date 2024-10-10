@@ -6,7 +6,7 @@ import jakarta.persistence.Table;
 import java.awt.*;
 
 @Entity
-@Table(name = "Cercles")
+//@Table(name = "Cercles")
 public class Cercle extends FormeGeo {
     private double rayon = 2.5;
 

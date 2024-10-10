@@ -7,7 +7,7 @@ import jakarta.persistence.Table;
 import java.awt.*;
 
 @Entity
-@Table(name = "triangles")
+//@Table(name = "triangles")
 public class Triangle extends FormeGeo {
     private double side =3;
 
