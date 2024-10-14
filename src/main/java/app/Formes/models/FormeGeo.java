@@ -6,6 +6,8 @@ import java.awt.Color;
 
 @Entity
 @Table(name = "FormeGeo")
+@Inheritance(strategy = InheritanceType.JOINED)  // Pour permettre l'héritage dans la BDD
+
 public abstract class FormeGeo {
 
     @Id@GeneratedValue(strategy = GenerationType.IDENTITY)

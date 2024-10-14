@@ -24,6 +24,8 @@ public class Carre extends FormeGeo {
     public void setSide(double side) {
         this.side = side;
     }
+
+
     @Override
     public String getName() {
         return "Carré";

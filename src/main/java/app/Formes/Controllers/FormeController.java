@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/formes")
+@RequestMapping("/api/formes")
 public class FormeController {
 
     private final FormeGeoService formeGeoService;
@@ -25,6 +25,10 @@ public class FormeController {
         return formeGeoService.getAllFormes();
     }
 
+    @GetMapping("/{id}")
+    public FormeGeo getFormeById(@PathVariable Long id) {
+        return formeGeoService.getFormeById(id);
+    }
 
     @PostMapping
     public FormeGeo createForme(@RequestBody FormeGeo forme) {
