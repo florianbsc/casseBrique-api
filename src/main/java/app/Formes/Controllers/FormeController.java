@@ -1,10 +1,10 @@
 package app.Formes.Controllers;
 
+import app.Formes.DTO.FormeDTO;
 import app.Formes.Services.FormeGeoService;
 import app.Formes.models.FormeGeo;
-import app.Formes.models.Triangle;
-import jakarta.persistence.GeneratedValue;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -26,13 +26,28 @@ public class FormeController {
     }
 
     @GetMapping("/{id}")
-    public FormeGeo getFormeById(@PathVariable Long id) {
-        return formeGeoService.getFormeById(id);
+    public ResponseEntity<FormeGeo> getFormeById(@PathVariable Long id) {
+        FormeGeo forme = formeGeoService.getFormeById(id);
+        if (forme == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
+        return ResponseEntity.ok(forme);
     }
 
     @PostMapping
-    public FormeGeo createForme(@RequestBody FormeGeo forme) {
+    public FormeGeo createForme(@RequestBody FormeDTO formeDTO) {
+        FormeGeo forme = formeDTO.dtoToForme();
         return formeGeoService.saveFormeGeo(forme);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity deleteFormeById(@PathVariable Long id) {
+        boolean isDeleted = formeGeoService.deleteFormeById(id);
+        if (isDeleted) {
+            return ResponseEntity.ok("Forme supprimée avec succès");
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
     }
 }
 

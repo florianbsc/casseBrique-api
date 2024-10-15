@@ -2,7 +2,8 @@ package app.Formes.Services;
 
 import app.Formes.Repository.FormeGeoRepository;
 import app.Formes.models.FormeGeo;
-import app.Formes.models.Niveau;
+import jakarta.transaction.Transactional;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,20 +21,19 @@ public class FormeGeoService {
         return formeGeoRepository.findAll();
     }
 
+    @Cacheable("formes")
     public FormeGeo getFormeById(Long id) {
         return formeGeoRepository.findById(id).orElse(null);
     }
 
-    public FormeGeo createForme(FormeGeo forme) {
-        return formeGeoRepository.save(forme);
-    }
-
-    public void deleteFormeById(Long id) {
-        formeGeoRepository.deleteById(id);
-    }
-
+    @Transactional
     public FormeGeo saveFormeGeo(FormeGeo forme) {
         return formeGeoRepository.save(forme);
+    }
+
+    public boolean deleteFormeById(Long id) {
+        formeGeoRepository.deleteById(id);
+        return false;
     }
 
 
